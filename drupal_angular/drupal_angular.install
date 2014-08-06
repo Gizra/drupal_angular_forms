@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function drupal_angular_install() {
+  // Set required date API variables.
+  // See date_api_status().
+  date_default_timezone_set('Asia/Jerusalem');
+  variable_set('date_default_timezone', 'Asia/Jerusalem');
+  variable_set('date_first_day', 1);
+}

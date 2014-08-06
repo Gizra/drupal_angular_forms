@@ -1,37 +1,54 @@
-# Ignore configuration files that may contain sensitive information.
-sites/*/*settings*.php
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
 
-# Ignore paths that contain generated content.
-cache/
-files/
-sites/*/files
-sites/*/private
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
-# Ignore default text files
-robots.txt
-/CHANGELOG.txt
-/COPYRIGHT.txt
-/INSTALL*.txt
-/LICENSE.txt
-/MAINTAINERS.txt
-/UPGRADE.txt
-/README.txt
-sites/all/README.txt
-sites/all/modules/README.txt
-sites/all/themes/README.txt
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
 
-# Ignore everything but the "sites" folder ( for non core developer )
-.htaccess
-web.config
-authorize.php
-cron.php
-index.php
-install.php
-update.php
-xmlrpc.php
-/includes
-/misc
-/modules
-/profiles
-/scripts
-/themes
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# Custom #
+#############
+drupal_angular/modules/contrib
+drupal_angular/1/modules
+drupal_angular/1/libraries
+drupal_angular/themes/contrib
+drupal_angular/libraries
+www
+install.sh
+
+# IDE #
+##########
+.project
+.settings/
+.idea
