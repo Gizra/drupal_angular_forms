@@ -1,4 +1,4 @@
-drupal_angular_forms
+Drupal AngularJs forms
 ====================
 
 Angular forms for creating content type in Drupal. 
