@@ -1,0 +1,10 @@
+name = drupal_angular_general
+description = Drupal AngularJs general
+core = 7.x
+package = Features
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = jquery_update
+dependencies[] = libraries
+dependencies[] = restful
+features[features_api][] = api:2

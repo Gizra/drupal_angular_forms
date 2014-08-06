@@ -32,8 +32,12 @@ dependencies[] = entity_token
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = jquery_update
+dependencies[] = inline_entity_form
 dependencies[] = libraries
+dependencies[] = page_manager
+dependencies[] = panels
 dependencies[] = restful
+dependencies[] = title
 dependencies[] = token
 
 ; Features
