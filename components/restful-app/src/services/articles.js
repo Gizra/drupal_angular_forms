@@ -16,6 +16,7 @@ angular.module('restfulApp')
       var config = {
         withCredentials: true,
         headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
           "X-CSRF-Token": DrupalSettings.getCsrfToken(),
           // Call the correct resource version (v1.5) that has the "body" and
           // "image" fields exposed.
