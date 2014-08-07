@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the drupal_angular_discussion feature.
+ */
+
+include_once 'drupal_angular_discussion.features.inc';

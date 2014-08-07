@@ -1,0 +1,13 @@
+name = drupal_angular_general
+description = Drupal AngularJs general
+core = 7.x
+package = Features
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = jquery_update
+dependencies[] = libraries
+dependencies[] = page_manager
+dependencies[] = restful
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = homepage

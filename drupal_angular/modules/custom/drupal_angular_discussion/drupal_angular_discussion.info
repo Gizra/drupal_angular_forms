@@ -1,0 +1,10 @@
+name = drupal_angular_discussion
+description = Drupal AngularJs generalDiscussion
+core = 7.x
+package = Features
+dependencies[] = drupal_angular_event
+dependencies[] = features
+dependencies[] = text
+features[features_api][] = api:2
+features[field_instance][] = node-discussion-body
+features[node][] = discussion

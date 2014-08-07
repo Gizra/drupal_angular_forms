@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the drupal_angular_general feature.
+ */
+
+include_once 'drupal_angular_general.features.inc';
