@@ -45,3 +45,4 @@ dependencies[] = drupal_angular_article
 dependencies[] = drupal_angular_discussion
 dependencies[] = drupal_angular_event
 dependencies[] = drupal_angular_general
+dependencies[] = drupal_angular_restful

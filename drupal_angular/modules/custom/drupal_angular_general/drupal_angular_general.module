@@ -5,3 +5,82 @@
  */
 
 include_once 'drupal_angular_general.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function drupal_angular_general_menu() {
+  $items['angular/form'] = array(
+    'title' => 'AngularJs Form',
+    'access callback' => 'node_access',
+    'access arguments' => array('create', 'article'),
+    'page callback' => 'drupal_angular_general_form_page',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function drupal_angular_general_theme() {
+  $theme['drupal_angular_general_angular_form'] = array(
+    'template' => 'restful-angular-form',
+    'path' => drupal_get_path('module', 'drupal_angular_general') . '/templates',
+    'variables' => array(
+      'url' => NULL
+    ),
+  );
+
+  return $theme;
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function drupal_angular_general_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'drupal_angular_general') {
+    return 'plugins/' . $plugin;
+  }
+}
+
+/**
+ * Page callback; Load the AngularJs form.
+ */
+function drupal_angular_general_form_page() {
+  $bower_path = libraries_get_path('bower_components');
+
+  // Load the libraries.
+  drupal_add_js($bower_path . '/angular/angular.js');
+
+  // JSON pretty print library.
+  drupal_add_js($bower_path . '/ng-prettyjson/dist/ng-prettyjson.min.js');
+  drupal_add_css($bower_path . '/ng-prettyjson/dist/ng-prettyjson.min.css');
+
+  // Select2.
+  drupal_add_js($bower_path . '/select2/select2.js');
+  drupal_add_css($bower_path . '/select2/select2.css');
+  drupal_add_js($bower_path . '/angular-ui-select2/src/select2.js');
+
+  // Load our custom app.
+  $app_path = $bower_path . '/restful-app/dist';
+  drupal_add_js($app_path . '/restful-app.js');
+  drupal_add_css($app_path . '/css/restful-app.css');
+
+  // Pass info via Drupal.settings.
+  $settings['drupalAngular'] = array(
+    'basePath' => url('', array('absolute' => TRUE)),
+    'csrfToken' => drupal_get_token(\RestfulInterface::TOKEN_VALUE),
+    'data' => array(
+      'article' => array(
+        'label' => 'no',
+      ),
+    ),
+  );
+  drupal_add_js($settings, 'setting');
+
+  // Theme function simply declares the angular app, and ng-includes the app's
+  // view.
+  $url = url($app_path . '/views/main.html', array('absolute' => TRUE));
+  return theme('drupal_angular_general_angular_form', array('url' => $url));
+}
+

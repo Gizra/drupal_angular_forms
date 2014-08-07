@@ -21,24 +21,24 @@ mkdir www
 bash scripts/build
 
 # Build last version of angular application.
-# cd components/pl-app
+cd components/restful-app
 
-# npm install
-# grunt build
+sudo npm install
+grunt build
 
-# cd ../..
+cd ../..
 
-# Install angular components via bower.
-# bower uninstall pl-app
-# bower cache clean
-# bower install ./components/pl-app
+Install angular components via bower.
+bower uninstall restful-app
+bower cache clean
+bower install ./components/restful-app
 
 cd www
 
 drush si -y drupal_angular --locale=en --account-name=$ADMIN_USERNAME --account-pass=$ADMIN_PASSWORD --account-mail=$ADMIN_EMAIL --db-url=mysql://$MYSQL_USERNAME:$MYSQL_PASSWORD@$MYSQL_HOST/$MYSQL_DB_NAME --uri=$BASE_DOMAIN_URL
 
 # Development modules.
-drush en field_ui migrate_ui -y
+drush en devel field_ui migrate_ui -y
 
 # Login as admin.
 drush uli --uri=$BASE_DOMAIN_URL
