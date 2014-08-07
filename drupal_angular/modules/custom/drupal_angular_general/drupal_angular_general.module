@@ -50,9 +50,7 @@ function drupal_angular_general_form_page() {
   $bower_path = libraries_get_path('bower_components');
 
   // Load the libraries.
-  drupal_add_js($bower_path . '/danialfarid-angular-file-upload/dist/angular-file-upload-shim.min.js');
   drupal_add_js($bower_path . '/angular/angular.js');
-  drupal_add_js($bower_path . '/danialfarid-angular-file-upload/dist/angular-file-upload.min.js');
 
   // JSON pretty print library.
   drupal_add_js($bower_path . '/ng-prettyjson/dist/ng-prettyjson.min.js');

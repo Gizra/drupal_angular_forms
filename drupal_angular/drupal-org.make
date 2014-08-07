@@ -17,14 +17,14 @@ projects[countries][version] = "2.1"
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.8"
 
+projects[devel][subdir] = "contrib"
+projects[devel][version] = "1.5"
+
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.5"
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
-
-projects[entity_validator][subdir] = "contrib"
-projects[entity_validator][version] = "1.0"
 
 projects[features][subdir] = "contrib"
 projects[features][version] = "2.0"

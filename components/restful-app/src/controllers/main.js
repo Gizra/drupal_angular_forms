@@ -3,7 +3,9 @@
 angular.module('restfulApp')
   .controller('MainCtrl', function($scope, DrupalSettings, ArticlesResource, $log) {
     $scope.data = DrupalSettings.getData('article');
-    $scope.serverSide = {};
+    $scope.serverSide = {
+      data: {}
+    };
 
     /**
      * Submit form (even if not validated via client).

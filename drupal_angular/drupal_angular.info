@@ -29,7 +29,6 @@ dependencies[] = countries
 dependencies[] = date
 dependencies[] = entity
 dependencies[] = entity_token
-dependencies[] = entity_validator
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = jquery_update
