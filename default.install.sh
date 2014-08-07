@@ -21,17 +21,17 @@ mkdir www
 bash scripts/build
 
 # Build last version of angular application.
-# cd components/pl-app
+cd components/restful-app
 
-# npm install
-# grunt build
+sudo npm install
+grunt build
 
-# cd ../..
+cd ../..
 
-# Install angular components via bower.
-# bower uninstall pl-app
-# bower cache clean
-# bower install ./components/pl-app
+Install angular components via bower.
+bower uninstall restful-app
+bower cache clean
+bower install ./components/restful-app
 
 cd www
 
