@@ -1,0 +1,10 @@
+name = drupal_angular_article
+description = Drupal AngularJs Article content type
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_instance][] = node-article-body
+features[node][] = article

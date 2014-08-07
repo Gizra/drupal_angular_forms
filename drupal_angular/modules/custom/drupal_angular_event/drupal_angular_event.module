@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the drupal_angular_event feature.
+ */
+
+include_once 'drupal_angular_event.features.inc';

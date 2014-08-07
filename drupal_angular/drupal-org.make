@@ -38,6 +38,12 @@ projects[jquery_update][version] = "2.4"
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "2.2"
 
+projects[migrate][subdir] = "contrib"
+projects[migrate][version] = 2.5
+
+projects[migrate_extras][subdir] = "contrib"
+projects[migrate_extras][version] = 2.5
+
 projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.4"
 
