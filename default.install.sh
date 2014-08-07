@@ -14,7 +14,7 @@ ADMIN_USERNAME="admin"
 ADMIN_PASSWORD="admin"
 ADMIN_EMAIL="admin@example.com"
 
-chmod 777 www/sites/default
+sudo chmod 777 www/sites/default
 rm -rf www/
 mkdir www
 
@@ -36,6 +36,9 @@ bash scripts/build
 cd www
 
 drush si -y drupal_angular --locale=en --account-name=$ADMIN_USERNAME --account-pass=$ADMIN_PASSWORD --account-mail=$ADMIN_EMAIL --db-url=mysql://$MYSQL_USERNAME:$MYSQL_PASSWORD@$MYSQL_HOST/$MYSQL_DB_NAME --uri=$BASE_DOMAIN_URL
+
+# Development modules.
+drush en field_ui -y
 
 # Login as admin.
 drush uli --uri=$BASE_DOMAIN_URL
