@@ -2,9 +2,8 @@
   margin: 20px 0;
 }
 
-.errors,
-.help-block {
-  color: red;
+.errors {
+  color: #a94442;
 }
 
 .create-success {
