@@ -10,10 +10,10 @@ include_once 'drupal_angular_general.features.inc';
  * Implements hook_menu().
  */
 function drupal_angular_general_menu() {
-  $items['angular/form'] = array(
-    'title' => 'AngularJs Form',
+  $items['create/content'] = array(
+    'title' => 'Add a content',
     'access callback' => 'node_access',
-    'access arguments' => array('create', 'article'),
+    'access arguments' => array('create', 'content'),
     'page callback' => 'drupal_angular_general_form_page',
   );
   return $items;
@@ -38,7 +38,7 @@ function drupal_angular_general_theme() {
  * Implements hook_ctools_plugin_directory().
  */
 function drupal_angular_general_ctools_plugin_directory($module, $plugin) {
-  if ($module == 'drupal_angular_general') {
+  if ($module == 'ctools') {
     return 'plugins/' . $plugin;
   }
 }
