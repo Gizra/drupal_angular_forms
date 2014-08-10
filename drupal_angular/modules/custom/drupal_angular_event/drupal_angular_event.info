@@ -4,6 +4,7 @@ core = 7.x
 package = Features
 dependencies[] = date
 dependencies[] = drupal_angular_discussion
+dependencies[] = drupal_angular_document
 dependencies[] = features
 dependencies[] = text
 features[features_api][] = api:2
