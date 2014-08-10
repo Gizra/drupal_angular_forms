@@ -11,7 +11,7 @@ include_once 'drupal_angular_general.features.inc';
  */
 function drupal_angular_general_menu() {
   $items['create/content'] = array(
-    'title' => 'Add a content',
+    'title' => 'Add content',
     'access callback' => 'node_access',
     'access arguments' => array('create', 'content'),
     'page callback' => 'drupal_angular_general_form_page',
