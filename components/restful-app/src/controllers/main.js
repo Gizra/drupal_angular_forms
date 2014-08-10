@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('restfulApp')
-  .controller('MainCtrl', function($scope, DrupalSettings, ArticlesResource, $log) {
-    $scope.data = DrupalSettings.getData('article');
+  .controller('MainCtrl', function($scope, DrupalSettings, EntityResource, $log) {
+    $scope.data = DrupalSettings.getData('entity');
+    $scope.bundle = {};
     $scope.serverSide = {
       data: {}
     };
@@ -14,8 +15,10 @@ angular.module('restfulApp')
       // Prepare the tags, by removing the IDs that are not integer, so it will
       // use POST to create them.
       var submitData = angular.copy($scope.data);
+      // Cope the bundle name.
+      var bundle = angular.copy($scope.bundle);
 
-      ArticlesResource.createArticle(submitData)
+      EntityResource.createEntity(submitData, bundle)
         .success(function(data, status, headers, config) {
           $scope.serverSide.data = data;
           $scope.serverSide.status = status;

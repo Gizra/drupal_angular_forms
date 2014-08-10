@@ -1,6 +1,6 @@
 /**
  * restful-app
- * @version v0.0.1 - 2014-08-07
+ * @version v0.0.1 - 2014-08-10
  * @link 
  * @author  <>
  * @license MIT License, http://www.opensource.org/licenses/MIT
@@ -20,8 +20,9 @@ angular.module('restfulApp', [
 'use strict';
 
 angular.module('restfulApp')
-  .controller('MainCtrl', function($scope, DrupalSettings, ArticlesResource, $log) {
-    $scope.data = DrupalSettings.getData('article');
+  .controller('MainCtrl', function($scope, DrupalSettings, EntityResource, $log) {
+    $scope.data = DrupalSettings.getData('entity');
+    $scope.bundle = {};
     $scope.serverSide = {
       data: {}
     };
@@ -33,8 +34,10 @@ angular.module('restfulApp')
       // Prepare the tags, by removing the IDs that are not integer, so it will
       // use POST to create them.
       var submitData = angular.copy($scope.data);
+      // Cope the bundle name.
+      var bundle = angular.copy($scope.bundle);
 
-      ArticlesResource.createArticle(submitData)
+      EntityResource.createEntity(submitData, bundle)
         .success(function(data, status, headers, config) {
           $scope.serverSide.data = data;
           $scope.serverSide.status = status;
@@ -45,38 +48,6 @@ angular.module('restfulApp')
         })
       ;
     };
-  });
-
-'use strict';
-
-angular.module('restfulApp')
-  .service('ArticlesResource', function(DrupalSettings, $http, $log) {
-
-    /**
-     * Create a new article.
-     *
-     * @param data
-     *   The data object to POST.
-     *
-     * @returns {*}
-     *   JSON of the newley created article.
-     */
-    this.createArticle = function(data) {
-      return $http({
-        method: 'POST',
-        url: DrupalSettings.getBasePath() + 'api/v1/articles',
-        data: jQuery.param(data),
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-          "X-CSRF-Token": DrupalSettings.getCsrfToken(),
-          // Call the correct resource version (v1.5) that has the "body" and
-          // "image" fields exposed.
-          "X-Restful-Minor-Version": 5
-        },
-        withCredentials: true,
-        serverPredefined: true
-      });
-    }
   });
 
 'use strict';
@@ -118,5 +89,37 @@ angular.module('restfulApp')
      */
     this.getData = function(id) {
       return (angular.isDefined(self.settings.drupalAngular.data[id])) ? self.settings.drupalAngular.data[id] : {};
+    }
+  });
+
+'use strict';
+
+angular.module('restfulApp')
+  .service('EntityResource', function(DrupalSettings, $http, $log) {
+
+    /**
+     * Create a new article.
+     *
+     * @param data
+     *   The data object to POST.
+     *
+     * @returns {*}
+     *   JSON of the newley created article.
+     */
+    this.createEntity = function(data, bundle) {
+      return $http({
+        method: 'POST',
+        url: DrupalSettings.getBasePath() + 'api/v1/' + bundle.name,
+        data: jQuery.param(data),
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          "X-CSRF-Token": DrupalSettings.getCsrfToken(),
+          // Call the correct resource version (v1.5) that has the "body" and
+          // "image" fields exposed.
+          "X-Restful-Minor-Version": 5
+        },
+        withCredentials: true,
+        serverPredefined: true
+      });
     }
   });

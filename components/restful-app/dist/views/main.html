@@ -4,9 +4,25 @@
 
 <form name="article" ng-submit="submitForm()">
 
+  <div class="input-wrapper select">
+    <label>Type</label>
+    <select ui-select2 ng-model="bundle.name" name="type" data-placeholder="Pick a type" ng-required="true">
+      <option value=""></option>
+      <option value="discussions">Discussion</option>
+      <option value="documents">Document</option>
+      <option value="events">Event</option>
+    </select>
+
+    <div class="errors">
+      <ul ng-show="serverSide.data.errors.type">
+        <li ng-repeat="error in serverSide.data.errors.type">{{error}}</li>
+      </ul>
+    </div>
+  </div>
+
   <div class="input-wrapper text">
     <label>Title</label>
-    <input id="label" name="label" type="text" ng-model="data.label" placeholder="See how many characters are needed to validate..." ng-required="required" size="60">
+    <input id="label" name="label" type="text" ng-model="data.label" placeholder="Article Title" ng-required="required" size="60">
 
     <div class="errors">
       <ul ng-show="serverSide.data.errors.label">
@@ -18,7 +34,7 @@
 
   <div class="input-wrapper textarea">
     <label>Description</label>
-    <textarea id="body" name="body" type="textarea" ng-model="data.body" placeholder="Type some description. See which word is required..." rows="3" ng-minlength="3" ng-required="required" cols="60"></textarea>
+    <textarea id="body" name="body" type="textarea" ng-model="data.body" placeholder="Article Description" rows="3" ng-minlength="3" ng-required="required" cols="60"></textarea>
     <div class="errors">
       <ul ng-show="serverSide.data.errors.body">
         <li ng-repeat="error in serverSide.data.errors.body">{{error}}</li>

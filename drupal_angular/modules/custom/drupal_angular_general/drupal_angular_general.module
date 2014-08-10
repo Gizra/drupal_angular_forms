@@ -71,8 +71,8 @@ function drupal_angular_general_form_page() {
     'basePath' => url('', array('absolute' => TRUE)),
     'csrfToken' => drupal_get_token(\RestfulInterface::TOKEN_VALUE),
     'data' => array(
-      'article' => array(
-        'label' => 'no',
+      'entity' => array(
+        'label' => NULL,
       ),
     ),
   );

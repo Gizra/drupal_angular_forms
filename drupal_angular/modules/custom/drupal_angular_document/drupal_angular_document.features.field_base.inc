@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * drupal_angular_article.features.field_base.inc
+ * drupal_angular_document.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function drupal_angular_article_field_default_field_bases() {
+function drupal_angular_document_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'body'

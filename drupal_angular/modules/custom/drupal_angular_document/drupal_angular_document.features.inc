@@ -1,16 +1,16 @@
 <?php
 /**
  * @file
- * drupal_angular_article.features.inc
+ * drupal_angular_document.features.inc
  */
 
 /**
  * Implements hook_node_info().
  */
-function drupal_angular_article_node_info() {
+function drupal_angular_document_node_info() {
   $items = array(
-    'article' => array(
-      'name' => t('Article'),
+    'document' => array(
+      'name' => t('Document'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

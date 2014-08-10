@@ -1,0 +1,10 @@
+name = drupal_angular_document
+description = Drupal AngularJs document
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_instance][] = node-document-body
+features[node][] = document

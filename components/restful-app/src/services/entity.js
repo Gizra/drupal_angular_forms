@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('restfulApp')
-  .service('ArticlesResource', function(DrupalSettings, $http, $log) {
+  .service('EntityResource', function(DrupalSettings, $http, $log) {
 
     /**
      * Create a new article.
@@ -12,10 +12,10 @@ angular.module('restfulApp')
      * @returns {*}
      *   JSON of the newley created article.
      */
-    this.createArticle = function(data) {
+    this.createEntity = function(data, bundle) {
       return $http({
         method: 'POST',
-        url: DrupalSettings.getBasePath() + 'api/v1/articles',
+        url: DrupalSettings.getBasePath() + 'api/v1/' + bundle.name,
         data: jQuery.param(data),
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',

@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * drupal_angular_article.features.field_instance.inc
+ * drupal_angular_document.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function drupal_angular_article_field_default_field_instances() {
+function drupal_angular_document_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-article-body'
-  $field_instances['node-article-body'] = array(
-    'bundle' => 'article',
+  // Exported field_instance: 'node-document-body'
+  $field_instances['node-document-body'] = array(
+    'bundle' => 'document',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
