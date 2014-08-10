@@ -22,6 +22,7 @@ projects[devel][version] = "1.5"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.5"
+projects[entity][patch][] = "https://www.drupal.org/files/issues/2086225-entity-access-check-node-create-3.patch"
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"

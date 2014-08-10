@@ -20,6 +20,9 @@ mkdir www
 
 bash scripts/build
 
+# Fix permissions
+sudo chmod 777 -R www/
+
 # Build last version of angular application.
 cd components/restful-app
 
