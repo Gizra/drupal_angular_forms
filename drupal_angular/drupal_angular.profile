@@ -40,10 +40,13 @@ function drupal_angular_set_variables() {
     'site_slogan' => 'Drupal AngularJs Forms',
 
     // Theme
+    'theme_default' => 'bootstrap',
     'admin_theme' => 'seven',
     'node_admin_theme' => 1,
     'jquery_update_jquery_version' => 1.8,
     'jquery_update_jquery_admin_version' => 1.5,
+    'page_manager_node_view_disabled' => FALSE,
+    'page_manager_term_view_disabled' => FALSE,
   );
 
   foreach ($variables as $key => $value) {

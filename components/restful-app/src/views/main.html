@@ -2,9 +2,9 @@
  <em>This is Angular!</em>
 </div>
 
-<form name="article" ng-submit="submitForm()">
+<form name="entityForm" ng-submit="submitForm(entityForm.$valid)">
 
-  <div class="input-wrapper select">
+  <div class="form-group select">
     <label>Type</label>
     <select ui-select2 ng-model="bundle.name" name="type" data-placeholder="Pick a type" ng-required="true">
       <option value=""></option>
@@ -12,17 +12,12 @@
       <option value="documents">Document</option>
       <option value="events">Event</option>
     </select>
-
-    <div class="errors">
-      <ul ng-show="serverSide.data.errors.type">
-        <li ng-repeat="error in serverSide.data.errors.type">{{error}}</li>
-      </ul>
-    </div>
   </div>
 
-  <div class="input-wrapper text">
+  <div class="form-group text" ng-class="{ 'has-error' : entityForm.label.$invalid && !entityForm.label.$pristine }">
     <label>Title</label>
-    <input id="label" name="label" type="text" ng-model="data.label" placeholder="Article Title" ng-required="required" size="60">
+    <input id="label" class="form-control" name="label" type="text" ng-model="data.label" placeholder="Article Title" required ng-minlength=3 size="60">
+    <p ng-show="entityForm.label.$invalid && !entityForm.label.$pristine" class="help-block">Label is too short.</p>
 
     <div class="errors">
       <ul ng-show="serverSide.data.errors.label">
@@ -32,9 +27,10 @@
 
   </div>
 
-  <div class="input-wrapper textarea">
+  <div class="form-group textarea" ng-class="{ 'has-error' : entityForm.label.$invalid && !entityForm.label.$pristine }">
     <label>Description</label>
-    <textarea id="body" name="body" type="textarea" ng-model="data.body" placeholder="Article Description" rows="3" ng-minlength="3" ng-required="required" cols="60"></textarea>
+    <textarea id="body" class="form-control" name="body" type="textarea" ng-model="data.body" placeholder="Article Description" cols="60" rows="3" ng-minlength=10 required></textarea>
+    <p ng-show="entityForm.body.$invalid && !entityForm.body.$pristine" class="help-block">Description is too short.</p>
     <div class="errors">
       <ul ng-show="serverSide.data.errors.body">
         <li ng-repeat="error in serverSide.data.errors.body">{{error}}</li>
@@ -43,16 +39,18 @@
   </div>
 
   <div class="actions">
-    <button type="submit" tabindex="100">Submit</button>
+    <button type="submit" class="btn btn-primary" tabindex="100">Submit</button>
   </div>
 </form>
+
+ng-show="bundle.name == 'discussions'"
 
 <h2>Console (Server side)</h2>
 
 <div>
   <div ng-show="serverSide.status == 200" class="create-success">
     <strong>
-      New article created: <a ng-href="{{ serverSide.data.self }}" target="_blank">{{ serverSide.data.label }}</a> (node ID {{ serverSide.data.id }})
+      New {{bundle.name}} created: <a ng-href="{{ serverSide.data.self }}" target="_blank">{{ serverSide.data.label }}</a> (node ID {{ serverSide.data.id }})
     </strong>
   </div>
 

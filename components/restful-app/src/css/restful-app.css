@@ -2,7 +2,8 @@
   margin: 20px 0;
 }
 
-.errors {
+.errors,
+.help-block {
   color: red;
 }
 
