@@ -4,6 +4,10 @@
  * Implements hook_install().
  */
 function drupal_angular_install() {
+  // Enable our themes.
+  theme_disable(array('bartik'));
+  theme_enable(array('bootstrap'));
+
   // Set required date API variables.
   // See date_api_status().
   date_default_timezone_set('Asia/Jerusalem');
