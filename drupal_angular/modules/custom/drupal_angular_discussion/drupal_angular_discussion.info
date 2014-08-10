@@ -2,6 +2,7 @@ name = drupal_angular_discussion
 description = Drupal AngularJs generalDiscussion
 core = 7.x
 package = Features
+dependencies[] = drupal_angular_document
 dependencies[] = drupal_angular_event
 dependencies[] = features
 dependencies[] = text

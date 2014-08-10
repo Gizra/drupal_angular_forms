@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the drupal_angular_document feature.
+ */
+
+include_once 'drupal_angular_document.features.inc';

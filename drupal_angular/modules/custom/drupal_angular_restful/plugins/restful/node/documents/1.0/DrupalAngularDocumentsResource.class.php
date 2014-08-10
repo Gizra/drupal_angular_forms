@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains DrupalAngularArticlesResource.
+ * Contains DrupalAngularDocumentsResource.
  */
 
-class DrupalAngularArticlesResource extends RestfulEntityBaseNode {
+class DrupalAngularDocumentsResource extends RestfulEntityBaseNode {
 
   /**
    * Overrides \ResfulEntityBaseNode::getPublicFields().
