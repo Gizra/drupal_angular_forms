@@ -1,0 +1,5 @@
+<div class="form-group btn-group btn-group">
+  <div class="btn-group" ng-repeat="(key, value) in items">
+    <button type="button" ng-value="key" ng-click="updateBundle(key, $event)" class="btn btn-default">{{value}}</button>
+  </div>
+</div>
