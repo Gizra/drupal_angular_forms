@@ -10,5 +10,6 @@ dependencies[] = text
 features[features_api][] = api:2
 features[field_base][] = field_event_date
 features[field_instance][] = node-event-body
+features[field_instance][] = node-event-field_categories
 features[field_instance][] = node-event-field_event_date
 features[node][] = event

@@ -30,6 +30,15 @@
     </div>
   </div>
 
+  <div class="form-group categories" ng-class="{ 'has-error' : entityForm.categories.$invalid && !entityForm.categories.$pristine }">
+    <span ng-repeat="category in data.categories">
+      <label class="checkbox">
+        <input type="checkbox" ng-model="selection.ids[category.tid]" name="category" id="{{category.tid}}" />
+        {{category.name}}
+      </label>
+    </span>
+  </div>
+
   <div class="actions">
     <button type="submit" class="btn btn-primary" tabindex="100">Submit</button>
   </div>

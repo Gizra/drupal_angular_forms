@@ -27,7 +27,7 @@ angular.module('restfulApp')
           // "image" fields exposed.
           "X-Restful-Minor-Version": 5
         },
-        withCredentials: true,
+        withCredentials: true
       });
     }
   });

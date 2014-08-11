@@ -9,6 +9,9 @@ angular.module('restfulApp')
       'documents': 'Document',
       'events': 'Event'
     };
+    $scope.selection = {
+      ids: {}
+    };
     $scope.serverSide = {
       data: {}
     };
@@ -17,9 +20,13 @@ angular.module('restfulApp')
      * Update the bundle of the entity to send to the right API.
      */
     $scope.updateBundle = function(bundle, e) {
+      // Get element clicked in the event.
       var elem = angular.element(e.srcElement);
-      angular.element(".active").removeClass('active');
-      elem.addClass( 'active' );
+      // Remove class "active" from all elements.
+      angular.element( ".active" ).removeClass( "active" );
+      // Add class "active" to clicked element.
+      elem.addClass( "active" );
+      // Update Bundle.
       $scope.bundleName = bundle;
     }
 
@@ -28,10 +35,19 @@ angular.module('restfulApp')
      */
     $scope.submitForm = function(isValid, data, bundle) {
       // Angular checks if form is valid.
-      // And we check if bundle is selected.
       if(isValid) {
         // Cope data.
         var submitData = angular.copy(data);
+        // Add selected categories to data.
+        var categories = [];
+        var id = 0;
+        angular.forEach($scope.selection.ids, function (name, termId) {
+          categories[id] = termId;
+          id++;
+        });
+
+        submitData.categories = categories;
+
         // Call the create entity function service.
         EntityResource.createEntity(submitData, bundle)
           .success(function(data, status, headers, config) {

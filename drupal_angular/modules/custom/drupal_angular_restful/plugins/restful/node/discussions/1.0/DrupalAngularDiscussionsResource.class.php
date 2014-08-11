@@ -18,6 +18,10 @@ class DrupalAngularDiscussionsResource extends RestfulEntityBaseNode {
       'sub_property' => 'value',
     );
 
+    $public_fields['categories'] = array(
+      'property' => 'field_categories',
+    );
+
     return $public_fields;
   }
 
