@@ -13,6 +13,7 @@ angular.module('restfulApp')
       restrict: 'E',
       scope: {
         items: '=',
+        bundleName: '=',
         onChange: '=onChange'
       },
       link: function postLink(scope) {

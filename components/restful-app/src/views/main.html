@@ -4,7 +4,7 @@
 
 <form name="entityForm" ng-submit="submitForm(entityForm.$valid, data, bundleName)">
 
-  <bundle-select items="bundles" on-change="updateBundle"></bundle-select>
+  <bundle-select items="bundles" on-change="updateBundle" bundle-name="bundleName"></bundle-select>
 
   <div class="form-group text" ng-class="{ 'has-error' : entityForm.label.$invalid && !entityForm.label.$pristine }">
     <label>Title</label>

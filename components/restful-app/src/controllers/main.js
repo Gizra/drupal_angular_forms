@@ -3,7 +3,7 @@
 angular.module('restfulApp')
   .controller('MainCtrl', function($scope, DrupalSettings, EntityResource, $log) {
     $scope.data = DrupalSettings.getData('entity');
-    $scope.bundleName = {};
+    $scope.bundleName = '';
     $scope.bundles = {
       'discussions': 'Discussion',
       'documents': 'Document',
@@ -27,6 +27,8 @@ angular.module('restfulApp')
      * Submit form (even if not validated via client).
      */
     $scope.submitForm = function(isValid, data, bundle) {
+      // Angular checks if form is valid.
+      // And we check if bundle is selected.
       if(isValid) {
         // Cope data.
         var submitData = angular.copy(data);
