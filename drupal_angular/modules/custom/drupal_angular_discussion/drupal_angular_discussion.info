@@ -4,6 +4,7 @@ core = 7.x
 package = Features
 dependencies[] = drupal_angular_document
 dependencies[] = drupal_angular_event
+dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = taxonomy
 dependencies[] = text

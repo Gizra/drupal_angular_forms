@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * Implements hook_migrate_api().
+ */
+function drupal_angular_migrate_migrate_api() {
+  $migrations = array(
+    // Taxonomy term.
+    'DafCategoriesTaxonomyTerms' => array('class_name' => 'DafCategoriesTaxonomyTerms'),
+
+    // Node.
+    'DafDiscussionNodes'  => array('class_name' => 'DafDiscussionNodes'),
+    'DafDocumentNodes'  => array('class_name' => 'DafDocumentNodes'),
+    'DafEventNodes'  => array('class_name' => 'DafEventNodes'),
+  );
+
+  $api = array(
+    'api' => 2,
+    'migrations' => $migrations,
+  );
+  return $api;
+}

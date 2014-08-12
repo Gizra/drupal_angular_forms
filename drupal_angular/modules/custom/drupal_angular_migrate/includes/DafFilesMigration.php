@@ -3,7 +3,7 @@
 /**
  * @file
  *
- * Contains Overriding the Migration class for pipeline migration specific definitions.
+ * Contains Overriding the Migration class for DAF migration specific definitions.
  */
 
 class DafFilesMigration extends Migration {
@@ -27,7 +27,7 @@ class DafFilesMigration extends Migration {
 
     // Create a MigrateSource object.
     $csv_file = $this->entityType . '/' . $this->bundle . '.csv';
-    $this->source = new MigrateSourceCSV(drupal_get_path('module', 'pipe_migrate') . '/csv/' . $csv_file, $this->csvColumns, array('header_rows' => 1));
+    $this->source = new MigrateSourceCSV(drupal_get_path('module', 'drupal_angular_migrate') . '/csv/' . $csv_file, $this->csvColumns, array('header_rows' => 1));
 
     $class = 'MigrateDestinationFile';
 
@@ -40,6 +40,6 @@ class DafFilesMigration extends Migration {
 
     // Files location.
     $this->addFieldMapping('source_dir')
-      ->defaultValue(drupal_get_path('module', 'pipe_migrate') . '/files');
+      ->defaultValue(drupal_get_path('module', 'drupal_angular_migrate') . '/files');
   }
 }

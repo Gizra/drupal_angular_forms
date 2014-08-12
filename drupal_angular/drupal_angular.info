@@ -31,6 +31,7 @@ dependencies[] = entity
 dependencies[] = entity_token
 dependencies[] = entityreference
 dependencies[] = features
+dependencies[] = file_entity
 dependencies[] = jquery_update
 dependencies[] = inline_entity_form
 dependencies[] = libraries
@@ -39,6 +40,10 @@ dependencies[] = panels
 dependencies[] = restful
 dependencies[] = title
 dependencies[] = token
+dependencies[] = views
+dependencies[] = views_bootstrap
+dependencies[] = views_bulk_operations
+dependencies[] = views_content
 
 ; Features
 dependencies[] = drupal_angular_discussion

@@ -3,7 +3,7 @@
 /**
  * @file
  *
- * Contains Overriding the Migration class for pipeline migration specific definitions.
+ * Contains Overriding the Migration class for DAF migration specific definitions.
  */
 
 class DafMigration extends Migration {
@@ -32,7 +32,7 @@ class DafMigration extends Migration {
     $csv_file_name = (isset($this->csvFile)) ? $this->csvFile : $this->bundle;
     // Create a MigrateSource object.
     $csv_file = $this->entityType . '/' . $csv_file_name . '.csv';
-    $this->source = new MigrateSourceCSV(drupal_get_path('module', 'pipe_migrate') . '/csv/' . $csv_file, $this->csvColumns, array('header_rows' => 1));
+    $this->source = new MigrateSourceCSV(drupal_get_path('module', 'drupal_angular_migrate') . '/csv/' . $csv_file, $this->csvColumns, array('header_rows' => 1));
 
     $class = $this->entityType == 'node' ? 'MigrateDestinationNode' : 'MigrateDestinationTerm';
 
@@ -42,17 +42,5 @@ class DafMigration extends Migration {
     $this
       ->addFieldMapping('uid')
       ->defaultValue(1);
-  }
-
-  /**
-   * Create a numeric-value node for entities with traceable value.
-   */
-  public function complete($entity, $row) {
-    if (!$this->createValueNode || !in_array($this->entityType, array('node', 'taxonomy_term'))) {
-      return;
-    }
-
-    $entity_id = $this->entityType == 'node' ? $entity->nid : $entity->tid;
-    pipe_value_create_value($entity->uid, $row->value, TRUE, $this->entityType, $entity_id);
   }
 }

@@ -41,7 +41,7 @@ cd www
 drush si -y drupal_angular --locale=en --account-name=$ADMIN_USERNAME --account-pass=$ADMIN_PASSWORD --account-mail=$ADMIN_EMAIL --db-url=mysql://$MYSQL_USERNAME:$MYSQL_PASSWORD@$MYSQL_HOST/$MYSQL_DB_NAME --uri=$BASE_DOMAIN_URL
 
 # Development modules.
-drush en devel field_ui migrate_ui -y
+drush en devel views_ui field_ui migrate_ui -y
 
 # Migrate content.
 drush en drupal_angular_migrate -y

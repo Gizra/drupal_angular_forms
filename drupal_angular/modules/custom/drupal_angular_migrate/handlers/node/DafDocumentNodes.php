@@ -10,6 +10,7 @@ class DafDocumentNodes extends DafMigration {
     array('id', 'Unique ID'),
     array('title', 'Title'),
     array('body', 'Description'),
+    array('field_categories', 'Categories'),
   );
 
   protected $entityType = 'node';
@@ -30,6 +31,7 @@ class DafDocumentNodes extends DafMigration {
 
     $this
       ->addFieldMapping('field_categories', 'field_categories')
+      ->separator('|')
       ->sourceMigration('DafCategoriesTaxonomyTerms');
   }
 
@@ -38,12 +40,12 @@ class DafDocumentNodes extends DafMigration {
    */
   public function prepare($entity, $row) {
     $values = array();
-    if (!empty($entity->field_meetings[LANGUAGE_NONE])) {
-      foreach ($entity->field_meetings[LANGUAGE_NONE] as $value) {
-        $values[] = array('target_id' => $value['target_id']['destid1']);
+    if (!empty($entity->field_categories[LANGUAGE_NONE])) {
+      foreach ($entity->field_categories[LANGUAGE_NONE] as $value) {
+        $values[] = array('target_id' => $value['target_id']);
       }
     }
 
-    $entity->field_meetings[LANGUAGE_NONE] = $values;
+    $entity->field_categories[LANGUAGE_NONE] = $values;
   }
 }

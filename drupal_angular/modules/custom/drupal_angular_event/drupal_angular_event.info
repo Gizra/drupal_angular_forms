@@ -5,6 +5,7 @@ package = Features
 dependencies[] = date
 dependencies[] = drupal_angular_discussion
 dependencies[] = drupal_angular_document
+dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = taxonomy
 dependencies[] = text
