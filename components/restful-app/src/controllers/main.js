@@ -9,9 +9,7 @@ angular.module('restfulApp')
       'documents': 'Document',
       'events': 'Event'
     };
-    $scope.selection = {
-      ids: {}
-    };
+    $scope.selections = {};
     $scope.serverSide = {
       data: {}
     };
@@ -41,7 +39,7 @@ angular.module('restfulApp')
         // Add selected categories to data.
         var categories = [];
         var id = 0;
-        angular.forEach($scope.selection.ids, function (name, termId) {
+        angular.forEach($scope.selections, function (value, termId) {
           categories[id] = termId;
           id++;
         });

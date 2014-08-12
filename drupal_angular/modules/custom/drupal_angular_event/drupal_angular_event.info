@@ -6,6 +6,7 @@ dependencies[] = date
 dependencies[] = drupal_angular_discussion
 dependencies[] = drupal_angular_document
 dependencies[] = features
+dependencies[] = taxonomy
 dependencies[] = text
 features[features_api][] = api:2
 features[field_base][] = field_event_date

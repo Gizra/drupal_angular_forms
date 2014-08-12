@@ -17,6 +17,7 @@ angular.module('restfulApp')
         onChange: '=onChange'
       },
       link: function postLink(scope) {
+        // On changing type => update the bundleName.
         scope.updateBundle = function(bundle, e) {
           return scope.onChange(bundle, e);
         }

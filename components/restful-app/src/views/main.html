@@ -30,17 +30,18 @@
     </div>
   </div>
 
-  <div class="form-group categories" ng-class="{ 'has-error' : entityForm.categories.$invalid && !entityForm.categories.$pristine }">
+  <div class="form-group categories">
+    <label>Categories</label>
     <span ng-repeat="category in data.categories">
       <label class="checkbox">
-        <input type="checkbox" ng-model="selection.ids[category.tid]" name="category" id="{{category.tid}}" />
-        {{category.name}}
+        <input type="checkbox" ng-model="selections[category.tid]" name="category" id="{{ category.tid }}" />
+        {{ category.name }}
       </label>
     </span>
   </div>
 
   <div class="actions">
-    <button type="submit" class="btn btn-primary" tabindex="100">Submit</button>
+    <button type="submit" class="btn btn-primary" tabindex="100">POST</button>
   </div>
 </form>
 <h2>Console (Server side)</h2>
@@ -48,7 +49,7 @@
 <div>
   <div ng-show="serverSide.status == 200" class="create-success">
     <strong>
-      New {{bundleName}} created: <a ng-href="{{ serverSide.data.self }}" target="_blank">{{ serverSide.data.label }}</a> (node ID {{ serverSide.data.id }})
+      New {{ bundleName }} created: <a ng-href="{{ serverSide.data.self }}" target="_blank">{{ serverSide.data.label }}</a> (node ID {{ serverSide.data.id }})
     </strong>
   </div>
 

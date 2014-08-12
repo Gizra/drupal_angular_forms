@@ -43,5 +43,9 @@ drush si -y drupal_angular --locale=en --account-name=$ADMIN_USERNAME --account-
 # Development modules.
 drush en devel field_ui migrate_ui -y
 
+# Migrate content.
+drush en drupal_angular_migrate -y
+drush mi --all --user=1
+
 # Login as admin.
 drush uli --uri=$BASE_DOMAIN_URL
