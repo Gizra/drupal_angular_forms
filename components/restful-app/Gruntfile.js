@@ -174,6 +174,7 @@ module.exports = function(grunt) {
             expand: true,
             cwd: '<%= yeoman.src %>',
             src: [
+              'directives/**/*.html',
               'views/**/*.html',
               'css/**/*.css',
             ],
