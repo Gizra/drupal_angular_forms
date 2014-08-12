@@ -32,14 +32,8 @@
 
   <div class="form-group date" ng-show="bundleName == 'events'" ng-class="{ 'has-error' : entityForm.date.$invalid && !entityForm.date.$pristine }">
     <label>Date</label>
-    <div class="row">
-      <div class="col-md-12">
-        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="data.date" is-open="opened" max-date="'2017-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
-        </span>
-      </div>
-    </div>
+    <datetimepicker data-ng-model="data.date" data-on-set-time="onTimeSet"></datetimepicker>
+    <p>Selected Date: {{ data.date | date:'dd/MM/yyyy HH:mm' }}</p>
   </div>
 
   <div class="form-group categories">

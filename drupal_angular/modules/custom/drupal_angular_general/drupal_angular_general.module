@@ -62,8 +62,10 @@ function drupal_angular_general_form_page() {
   drupal_add_js($bower_path . '/angular-ui-select2/src/select2.js');
 
   // Bootstrap DatePicker.
-  drupal_add_js($bower_path . '/angular-bootstrap/ui-bootstrap.min.js');
-  drupal_add_js($bower_path . '/angular-bootstrap/ui-bootstrap-tpls.min.js');
+  drupal_add_css($bower_path . '/angular-bootstrap-datetimepicker/src/css/datetimepicker.css');
+  drupal_add_js($bower_path . '/moment/moment.js');
+  drupal_add_js($bower_path . '/bootstrap/dist/js/bootstrap.js');
+  drupal_add_js($bower_path . '/angular-bootstrap-datetimepicker/src/js/datetimepicker.js');
 
   // Load our custom app.
   $app_path = $bower_path . '/restful-app/dist';

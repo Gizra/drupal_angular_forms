@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('restfulApp')
-  .controller('MainCtrl', function($scope, DrupalSettings, EntityResource, $log) {
+  .controller('MainCtrl', function($scope, DrupalSettings, EntityResource, $filter, $log) {
     $scope.data = DrupalSettings.getData('entity');
     $scope.bundleName = '';
     $scope.bundles = {
@@ -14,20 +14,13 @@ angular.module('restfulApp')
       data: {}
     };
 
-    // Disable weekend selection
-    $scope.disabled = function(date, mode) {
-      return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
-    };
-
-    $scope.open = function($event) {
-      $event.preventDefault();
-      $event.stopPropagation();
-
-      $scope.opened = true;
-    };
-
-    $scope.initDate = new Date('2016-15-20');
-    $scope.format = 'dd/MM/yyyy';
+    /**
+     * Convert the date-time format to sent to the API.
+     */
+    $scope.onTimeSet = function (newDate) {
+      $scope.data.date = $filter('date')(newDate, 'dd/MM/yyyy HH:mm');
+      $log.log($scope.data.date);
+    }
 
     /**
      * Update the bundle of the entity to send to the right API.
@@ -51,6 +44,7 @@ angular.module('restfulApp')
       if(isValid) {
         // Cope data.
         var submitData = angular.copy(data);
+
         // Add selected categories to data.
         var categories = [];
         var id = 0;
