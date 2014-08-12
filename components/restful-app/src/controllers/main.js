@@ -14,6 +14,21 @@ angular.module('restfulApp')
       data: {}
     };
 
+    // Disable weekend selection
+    $scope.disabled = function(date, mode) {
+      return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+    };
+
+    $scope.open = function($event) {
+      $event.preventDefault();
+      $event.stopPropagation();
+
+      $scope.opened = true;
+    };
+
+    $scope.initDate = new Date('2016-15-20');
+    $scope.format = 'dd/MM/yyyy';
+
     /**
      * Update the bundle of the entity to send to the right API.
      */
@@ -48,11 +63,11 @@ angular.module('restfulApp')
 
         // Call the create entity function service.
         EntityResource.createEntity(submitData, bundle)
-          .success(function(data, status, headers, config) {
+          .success(function(data, status) {
             $scope.serverSide.data = data;
             $scope.serverSide.status = status;
           })
-          .error(function(data, status, headers, config) {
+          .error(function(data, status) {
             $scope.serverSide.data = data;
             $scope.serverSide.status = status;
           });

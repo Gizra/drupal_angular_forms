@@ -4,7 +4,7 @@
  * @ngdoc directive
  * @name restfulApp.directive:bundleSelect
  * @description
- * # inlineLabel
+ * # bundleSelect
  */
 angular.module('restfulApp')
   .directive('bundleSelect', function ($window, DrupalSettings, $log) {

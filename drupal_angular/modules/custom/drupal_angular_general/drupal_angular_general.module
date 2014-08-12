@@ -61,6 +61,10 @@ function drupal_angular_general_form_page() {
   drupal_add_css($bower_path . '/select2/select2.css');
   drupal_add_js($bower_path . '/angular-ui-select2/src/select2.js');
 
+  // Bootstrap DatePicker.
+  drupal_add_js($bower_path . '/angular-bootstrap/ui-bootstrap.min.js');
+  drupal_add_js($bower_path . '/angular-bootstrap/ui-bootstrap-tpls.min.js');
+
   // Load our custom app.
   $app_path = $bower_path . '/restful-app/dist';
   drupal_add_js($app_path . '/restful-app.js');
