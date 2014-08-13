@@ -19,7 +19,7 @@ class DrupalAngularDocumentsResource extends RestfulEntityBaseNode {
     );
 
     $public_fields['categories'] = array(
-      'property' => 'field_categories',
+      'property' => 'field_content_categories',
     );
 
     return $public_fields;
