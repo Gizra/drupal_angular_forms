@@ -2,7 +2,7 @@
  <em>This is Angular!</em>
 </div>
 
-<form name="entityForm" ng-submit="submitForm(entityForm.$valid, data, bundleName)">
+<form name="entityForm" ng-submit="submitForm(entityForm.$valid, data, bundleName, startDate, startTime)">
 
   <bundle-select items="bundles" on-change="updateBundle" bundle-name="bundleName"></bundle-select>
 
@@ -33,7 +33,7 @@
   <div class="form-group date" data-ng-show="bundleName == 'events'">
     <label>Date</label>
     <div class="row">
-      <calendar></calendar>
+      <calendar data="data"></calendar>
     </div>
   </div>
 

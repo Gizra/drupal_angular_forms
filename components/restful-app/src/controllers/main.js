@@ -37,6 +37,20 @@ angular.module('restfulApp')
         // Cope data.
         var submitData = angular.copy(data);
 
+        // Setup Date and time for events.
+        if (bundle == 'events') {
+          // Make a timestamp for restful.
+          submitData.date =  {
+            value: new Date(data.startDate).getTime() / 1000,
+            value2: new Date(data.endDate).getTime() / 1000
+          };
+          // Delete time because RESTful will try to check their values.
+          delete submitData['startDate'];
+          delete submitData['endDate'];
+          delete submitData['startTime'];
+          delete submitData['endTime'];
+        }
+
         // Add selected categories to data.
         var categories = [];
         var id = 0;

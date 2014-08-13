@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('restfulApp')
-  .controller('startDateCtrl', function($scope) {
+  .controller('dateCtrl', function($scope) {
     // Date Calendar options.
     $scope.minDate = new Date();
 
@@ -9,7 +9,14 @@ angular.module('restfulApp')
       $event.preventDefault();
       $event.stopPropagation();
 
-      $scope.opened = true;
+      $scope.startOpened = true;
+    };
+
+    $scope.openEnd = function($event) {
+      $event.preventDefault();
+      $event.stopPropagation();
+
+      $scope.endOpened = true;
     };
 
     $scope.dateOptions = {
@@ -20,6 +27,7 @@ angular.module('restfulApp')
 
     // Time picker options
     $scope.startTime = new Date();
+    $scope.endTime = new Date();
 
     $scope.hstep = 1;
     $scope.mstep = 1;

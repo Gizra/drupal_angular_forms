@@ -16,6 +16,7 @@ angular.module('restfulApp')
      *   JSON of the newly created entity.
      */
     this.createEntity = function(data, bundle) {
+      $log.log(data);
       return $http({
         method: 'POST',
         url: DrupalSettings.getBasePath() + 'api/v1/' + bundle,
