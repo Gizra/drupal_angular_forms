@@ -11,7 +11,6 @@ class DafEventNodes extends DafMigration {
     array('title', 'Title'),
     array('body', 'Description'),
     array('field_categories', 'Categories'),
-    array('field_event_date', 'Date'),
   );
 
   protected $entityType = 'node';
@@ -27,7 +26,6 @@ class DafEventNodes extends DafMigration {
     $field_names = array(
       'title',
       'body',
-      'field_event_date',
     );
     $this->addSimpleMappings($field_names);
 

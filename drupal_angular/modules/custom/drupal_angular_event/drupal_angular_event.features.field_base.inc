@@ -33,11 +33,11 @@ function drupal_angular_event_field_default_field_bases() {
         'year' => 'year',
       ),
       'timezone_db' => 'UTC',
-      'todate' => '',
+      'todate' => 'required',
       'tz_handling' => 'site',
     ),
     'translatable' => 0,
-    'type' => 'datetime',
+    'type' => 'datestamp',
   );
 
   return $field_bases;

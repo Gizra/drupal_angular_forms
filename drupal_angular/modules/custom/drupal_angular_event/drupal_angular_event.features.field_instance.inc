@@ -117,7 +117,7 @@ function drupal_angular_event_field_default_field_instances() {
           'multiple_to' => '',
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -141,6 +141,7 @@ function drupal_angular_event_field_default_field_instances() {
       'active' => 1,
       'module' => 'date',
       'settings' => array(
+        'display_all_day' => 1,
         'increment' => 15,
         'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
@@ -148,7 +149,7 @@ function drupal_angular_event_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_text',
+      'type' => 'date_popup',
       'weight' => 2,
     ),
   );
