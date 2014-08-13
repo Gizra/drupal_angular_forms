@@ -8,5 +8,7 @@ dependencies[] = taxonomy
 dependencies[] = text
 features[features_api][] = api:2
 features[field_base][] = body
+features[field_base][] = field_content_categories
 features[field_instance][] = node-document-body
+features[field_instance][] = node-document-field_content_categories
 features[node][] = document
