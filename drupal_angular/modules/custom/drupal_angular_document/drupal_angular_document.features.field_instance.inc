@@ -80,7 +80,7 @@ function drupal_angular_document_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_categories',
     'label' => 'Categories',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(

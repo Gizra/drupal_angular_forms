@@ -78,7 +78,7 @@ function drupal_angular_event_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_categories',
     'label' => 'Categories',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'behaviors' => array(
         'taxonomy-index' => array(
@@ -96,7 +96,7 @@ function drupal_angular_event_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete_tags',
-      'weight' => 2,
+      'weight' => 5,
     ),
   );
 

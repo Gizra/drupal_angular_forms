@@ -1,5 +1,5 @@
 name = drupal_angular_discussion
-description = Drupal AngularJs generalDiscussion
+description = Drupal AngularJs Discussion
 core = 7.x
 package = Features
 dependencies[] = drupal_angular_document

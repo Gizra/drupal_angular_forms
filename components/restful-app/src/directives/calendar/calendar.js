@@ -11,8 +11,6 @@ angular.module('restfulApp')
     return {
       templateUrl: DrupalSettings.getBasePath() + 'profiles/drupal_angular/libraries/bower_components/restful-app/dist/directives/calendar/calendar.html',
       restrict: 'E',
-      scope: {
-        'bundleName': '='
-      }
+      scope: {}
     };
   });

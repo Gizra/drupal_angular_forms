@@ -1,5 +1,5 @@
 name = drupal_angular_event
-description = Drupal AngularJs general Event  content type
+description = Drupal AngularJs Event
 core = 7.x
 package = Features
 dependencies[] = date
