@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('restfulApp')
-  .service('EntityResource', function(DrupalSettings, $http, $log) {
+  .service('EntityResource', function(DrupalSettings, $http) {
 
     /**
      * Create a new entity.
@@ -16,7 +16,6 @@ angular.module('restfulApp')
      *   JSON of the newly created entity.
      */
     this.createEntity = function(data, bundle) {
-      $log.log(data);
       return $http({
         method: 'POST',
         url: DrupalSettings.getBasePath() + 'api/v1/' + bundle,

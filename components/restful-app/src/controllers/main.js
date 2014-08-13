@@ -41,8 +41,8 @@ angular.module('restfulApp')
         if (bundle == 'events') {
           // Make a timestamp for restful.
           submitData.date =  {
-            value: new Date(data.startDate).getTime() / 1000,
-            value2: new Date(data.endDate).getTime() / 1000
+            value: new Date(data.startTime).getTime() / 1000,
+            value2: new Date(data.endTime).getTime() / 1000
           };
           // Delete time because RESTful will try to check their values.
           delete submitData['startDate'];
