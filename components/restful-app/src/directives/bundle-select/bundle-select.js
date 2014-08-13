@@ -7,7 +7,7 @@
  * # bundleSelect
  */
 angular.module('restfulApp')
-  .directive('bundleSelect', function ($window, DrupalSettings, $log) {
+  .directive('bundleSelect', function ($window, DrupalSettings) {
     return {
       templateUrl: DrupalSettings.getBasePath() + 'profiles/drupal_angular/libraries/bower_components/restful-app/dist/directives/bundle-select/bundle-select.html',
       restrict: 'E',

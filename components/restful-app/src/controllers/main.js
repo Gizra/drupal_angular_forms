@@ -15,14 +15,6 @@ angular.module('restfulApp')
     };
 
     /**
-     * Convert the date-time format to sent to the API.
-     */
-    $scope.onTimeSet = function (newDate) {
-      $scope.data.date = $filter('date')(newDate, 'dd/MM/yyyy HH:mm');
-      $log.log($scope.data.date);
-    }
-
-    /**
      * Update the bundle of the entity to send to the right API.
      */
     $scope.updateBundle = function(bundle, e) {
