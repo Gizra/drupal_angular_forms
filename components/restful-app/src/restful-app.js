@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('restfulApp', [
+    'angularFileUpload',
     'ngPrettyJson',
     'ui.select2',
     'ui.bootstrap',

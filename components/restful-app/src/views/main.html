@@ -37,6 +37,27 @@
       </div>
     </div>
 
+    <div class="input-wrapper file-wrapper" ng-show="bundleName == 'documents' || 'events'">
+      <input type="file" ng-file-select="onFileSelect($files)" >
+      <div ng-show="dropSupported" class="drop-box" ng-file-drop="onFileSelect($files);" ng-file-drop-available="dropSupported=true" ng-file-drag-over-class="file-upload-drag">
+
+        <div ng-hide="serverSide.image">
+          OR drop files here
+        </div>
+
+        <div ng-show="serverSide.image">
+          <img ng-src="{{ serverSide.image.self }}" />
+        </div>
+      </div>
+
+      <div class="errors">
+        <ul ng-show="serverSide.data.errors.image">
+          <li ng-repeat="error in serverSide.data.errors.image">{{error}}</li>
+        </ul>
+      </div>
+
+    </div>
+
     <div class="form-group categories">
       <label>Categories</label>
     <span ng-repeat="category in data.categories">

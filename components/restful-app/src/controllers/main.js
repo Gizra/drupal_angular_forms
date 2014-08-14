@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('restfulApp')
-  .controller('MainCtrl', function($scope, DrupalSettings, EntityResource, $filter, $log) {
+  .controller('MainCtrl', function($scope, DrupalSettings, EntityResource, FileUpload, $filter, $log) {
     $scope.data = DrupalSettings.getData('entity');
     $scope.bundleName = '';
     $scope.bundles = {
@@ -69,7 +69,20 @@ angular.module('restfulApp')
           .error(function(data, status) {
             $scope.serverSide.data = data;
             $scope.serverSide.status = status;
-          });
+          })
+        ;
+      }
+    };
+
+
+    $scope.onFileSelect = function($files) {
+      //$files: an array of files selected, each file has name, size, and type.
+      for (var i = 0; i < $files.length; i++) {
+        var file = $files[i];
+        FileUpload.upload(file).then(function(data) {
+          $scope.data.image = data.data.list[0].id;
+          $scope.serverSide.image = data.data.list[0];
+        });
       }
     };
   });
