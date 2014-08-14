@@ -31,12 +31,11 @@ angular.module('restfulApp')
     /**
      * Submit form (even if not validated via client).
      */
-    $scope.submitForm = function(isValid, data, bundle) {
-      // Angular checks if form is valid.
-      if(isValid) {
+    $scope.submitForm = function(entityForm, data, bundle) {
+      // Check if angular thinks that the form is valid.
+      if(entityForm.$valid) {
         // Cope data.
         var submitData = angular.copy(data);
-
         // Setup Date and time for events.
         if (bundle == 'events') {
           // Convert  to a timestamp for restful.

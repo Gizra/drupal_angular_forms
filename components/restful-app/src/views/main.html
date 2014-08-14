@@ -2,7 +2,7 @@
  <em>This is Angular!</em>
 </div>
 
-<form name="entityForm" ng-submit="submitForm(entityForm.$valid, data, bundleName, startDate, startTime)">
+<form name="entityForm" ng-submit="submitForm(entityForm, data, bundleName)">
 
   <div class="form-group text" ng-class="{ 'has-error' : entityForm.label.$invalid && !entityForm.label.$pristine }">
     <label>Title</label>
