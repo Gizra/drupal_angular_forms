@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains DrupalAngularDiscussionsResource.
+ * Contains QuickPostNodeBase.
  */
 
-class DrupalAngularDiscussionsResource extends RestfulEntityBaseNode {
+class QuickPostNodeBase extends RestfulEntityBaseNode {
 
   /**
    * Overrides \ResfulEntityBaseNode::getPublicFields().
@@ -28,7 +28,7 @@ class DrupalAngularDiscussionsResource extends RestfulEntityBaseNode {
   /**
    * Overrides \RestfulEntityBaseTaxonomyTerm::checkEntityAccess().
    *
-   * Allow access to create "Tags" resource for privileged users, as
+   * Allow access to create "Categories" resource for privileged users, as
    * we can't use entity_access() since entity_metadata_taxonomy_access()
    * denies it for a non-admin user.
    */

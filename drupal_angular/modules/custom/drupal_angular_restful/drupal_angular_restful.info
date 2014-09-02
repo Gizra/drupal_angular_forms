@@ -2,3 +2,5 @@ name = Drupal AngularJs RESTful
 description = Drupal AngularJs RESTful module.
 core = 7.x
 dependencies[] = restful
+
+files[] = plugins/restful/node/QuickPostNodeBase.php
