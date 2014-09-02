@@ -27,6 +27,9 @@ projects[entity][patch][] = "https://www.drupal.org/files/issues/2086225-entity-
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
 
+projects[file_entity][subdir] = "contrib"
+projects[file_entity][version] = "2.0-alpha3"
+
 projects[features][subdir] = "contrib"
 projects[features][version] = "2.0"
 
@@ -60,6 +63,15 @@ projects[title][version] = "1.0-alpha7"
 
 projects[token][subdir] = "contrib"
 projects[token][version] = "1.5"
+
+projects[views][subdir] = "contrib"
+projects[views][version] = "3.8"
+
+projects[views_bootstrap][subdir] = "contrib"
+projects[views_bootstrap][version] = "3.1"
+
+projects[views_bulk_operations][subdir] = "contrib"
+projects[views_bulk_operations][version] = "3.2"
 
 ; Libraries
 libraries[bootstrap_sass][download][type] = "file"

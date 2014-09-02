@@ -18,6 +18,14 @@ class DrupalAngularEventsResource extends RestfulEntityBaseNode {
       'sub_property' => 'value',
     );
 
+    $public_fields['categories'] = array(
+      'property' => 'field_content_categories',
+    );
+
+    $public_fields['date'] = array(
+      'property' => 'field_event_date',
+    );
+
     return $public_fields;
   }
 

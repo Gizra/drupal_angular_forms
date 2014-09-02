@@ -1,11 +1,15 @@
 name = drupal_angular_discussion
-description = Drupal AngularJs generalDiscussion
+description = Drupal AngularJs Discussion
 core = 7.x
 package = Features
 dependencies[] = drupal_angular_document
 dependencies[] = drupal_angular_event
+dependencies[] = entityreference
 dependencies[] = features
+dependencies[] = taxonomy
 dependencies[] = text
 features[features_api][] = api:2
 features[field_instance][] = node-discussion-body
+features[field_instance][] = node-discussion-field_content_categories
 features[node][] = discussion
+features[taxonomy][] = categories

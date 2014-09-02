@@ -2,7 +2,8 @@
 
 angular.module('restfulApp', [
     'ngPrettyJson',
-    'ui.select2'
+    'ui.select2',
+    'ui.bootstrap',
   ], function($httpProvider) {
 
     // Use x-www-form-urlencoded Content-Type

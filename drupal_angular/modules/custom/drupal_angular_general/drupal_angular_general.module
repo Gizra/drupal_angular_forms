@@ -61,10 +61,25 @@ function drupal_angular_general_form_page() {
   drupal_add_css($bower_path . '/select2/select2.css');
   drupal_add_js($bower_path . '/angular-ui-select2/src/select2.js');
 
+  // Bootstrap DatePicker.
+  drupal_add_js($bower_path . '/angular-bootstrap/ui-bootstrap.min.js');
+  drupal_add_js($bower_path . '/angular-bootstrap/ui-bootstrap-tpls.min.js');
+
   // Load our custom app.
   $app_path = $bower_path . '/restful-app/dist';
   drupal_add_js($app_path . '/restful-app.js');
   drupal_add_css($app_path . '/css/restful-app.css');
+
+  // Get all categories terms.
+  $v = taxonomy_vocabulary_machine_name_load('categories');
+  $terms = taxonomy_get_tree($v->vid);
+
+  $categories = array();
+
+  foreach ($terms as $term) {
+    $categories[$term->tid]['tid'] = $term->tid;
+    $categories[$term->tid]['name'] = $term->name;
+  }
 
   // Pass info via Drupal.settings.
   $settings['drupalAngular'] = array(
@@ -73,6 +88,7 @@ function drupal_angular_general_form_page() {
     'data' => array(
       'entity' => array(
         'label' => NULL,
+        'categories' => $categories
       ),
     ),
   );

@@ -1,0 +1,15 @@
+name = Drupal Angular Migration
+description = Create dummy content.
+package = drupal_angular
+core = 7.x
+dependencies[] = migrate
+dependencies[] = migrate_extras
+
+files[] = handlers/node/DafDiscussionNodes.php
+files[] = handlers/node/DafDocumentNodes.php
+files[] = handlers/node/DafEventNodes.php
+
+files[] = handlers/taxonomy_term/DafCategoriesTaxonomyTerms.php
+
+files[] = includes/DafFilesMigration.php
+files[] = includes/DafMigration.php
