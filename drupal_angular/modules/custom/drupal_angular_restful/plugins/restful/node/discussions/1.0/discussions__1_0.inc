@@ -7,6 +7,6 @@ $plugin = array(
   'entity_type' => 'node',
   'bundle' => 'discussion',
   'description' => t('Create the "discussion" content type.'),
-  'class' => 'DrupalAngularDiscussionsResource',
+  'class' => 'QuickPostNodeBase',
   'authentication_types' => TRUE,
 );
