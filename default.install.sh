@@ -26,7 +26,7 @@ sudo chmod 777 -R www/
 # Build last version of angular application.
 cd components/restful-app
 
-sudo npm install
+npm install
 grunt build
 
 cd ../..
